@@ -17,8 +17,11 @@ def run(args):
 
     unet_model = unet.build_model_denoise(unet_args=args.unet)
 
-    ckpt=os.path.join(path_experiment, 'checkpoint')
-    unet_model.load_weights(ckpt)
+    # ckpt=
+    # unet_model.load_weights(ckpt)
+
+    ckpt = tf.train.Checkpoint(model=unet_model)
+    ckpt.restore(os.path.join(path_experiment, 'checkpoint'))
 
     def do_stft(noisy):
         
