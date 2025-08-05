@@ -57,7 +57,7 @@ stft:
 
 #inference param
 inference:
-  audio: ''
+  audio: 'music/1.wav'
 # Models
 model: unet # either demucs or dwave
 unet:
