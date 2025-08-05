@@ -141,11 +141,12 @@ def _main(args):
     global __file__
 
     __file__ = hydra.utils.to_absolute_path(__file__)
+    print(args)
 
     run(args)
 
 
-@hydra.main(config_path="conf/conf.yaml")
+@hydra.main(config_path="conf", config_name="conf.yaml", version_base=None)
 def main(args):
     try:
         _main(args)
